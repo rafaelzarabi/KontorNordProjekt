@@ -1,4 +1,4 @@
-﻿namespace _123123
+﻿namespace GruppeProjekt
 {
     internal class Program
     {
