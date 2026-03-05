@@ -10,7 +10,7 @@ namespace _123123
         public string _Password { get; private set; }
         public int _UserID { get; private set; }
 
-        public User(string Username, int UserID, string Password)
+        public User(string Username, string Password, int UserID)
         {
             _UserName = Username;
             _Password = Password;

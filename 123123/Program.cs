@@ -1,10 +1,20 @@
-﻿namespace GruppeProjekt
+﻿using _123123;
+using System.Runtime.ConstrainedExecution;
+
+namespace GruppeProjekt
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            
+            UserService UserService = new UserService();
+
+            UserService.RegisterBruger();
+
+
+
+
             Console.ReadLine();
         }
     }
