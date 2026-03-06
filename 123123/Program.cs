@@ -18,7 +18,7 @@ namespace _123123
 
 
                 Console.WriteLine("===============================================");
-                Console.WriteLine("                   HOVEDMENU                   ");
+                Console.WriteLine("               BOOK ET MØDELOKALE              ");
                 Console.WriteLine("===============================================");
                 Console.WriteLine("");
                 Console.WriteLine("1)  Register bruger");
