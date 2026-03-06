@@ -31,8 +31,8 @@ namespace _123123
             _usersList.Add(NewUser);
         }
 
-            
-        public void ShowUserList(User User)   
+
+        public void ShowUserList()   
      
         {
             foreach (var user in _usersList)       
