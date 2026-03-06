@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace _123123
@@ -24,11 +25,29 @@ namespace _123123
 
             //automatisk tilføjer unikt id til UserID, +1 fordi ellers starer den ved nul
             int UserID = _usersList.Count + 1;
-           
+
             //opretter en ny bruger og tilføjer den til _userslisten
             User NewUser = new User(Username, Password, UserID);
             _usersList.Add(NewUser);
-
         }
+
+            
+        public void ShowUserList(User User)   
+     
+        {
+            foreach (var user in _usersList)       
+            {
+                Console.WriteLine($"{user._UserID}{user._UserName}");
+            }
+        }
+       
+    
+
+          
+        
+
+
+
+        
     }
 }
