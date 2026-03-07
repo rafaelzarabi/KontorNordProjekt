@@ -9,23 +9,24 @@ namespace _123123
         static void Main(string[] args)
         {
             bool ProgramRunning = true;
+            bool LogIn = false;
 
             // kalder klassen, så jeg kan bruge den i main
             Menu menu = new Menu();
 
             while (ProgramRunning == true)
             {
-                
-                menu.LogInMenu();
+                while (LogIn == false)
+                {
+                    Console.Clear();
+                    menu.LogInMenu();
+                }
 
-                menu.MainMenu();
-
-                
-
-               
-
-
-              
+                while (LogIn == true)
+                {
+                    Console.Clear();
+                    menu.MainMenu();
+                }
 
 
 
