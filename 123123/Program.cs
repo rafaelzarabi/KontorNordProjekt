@@ -8,11 +8,13 @@ namespace _123123
     {
         static void Main(string[] args)
         {
+            // kalder klassen, så jeg kan bruge den i main
+            Menu menu = new Menu();
+            UserService userService = new UserService();
+
             bool ProgramRunning = true;
             bool LogIn = false;
 
-            // kalder klassen, så jeg kan bruge den i main
-            Menu menu = new Menu();
 
             while (ProgramRunning == true)
             {

@@ -109,7 +109,7 @@ namespace _123123
             Console.WriteLine("                ALLE BRUGERE                   ".PadLeft(50));
             Console.WriteLine("===============================================".PadLeft(50));
 
-            foreach (var user in _usersList)       
+            foreach (User user in _usersList)       
             {
                 Console.WriteLine($"Navn: {user._Firstname} {user._Lastname}, ID: {user._UserID}");   
                 Console.WriteLine("");
