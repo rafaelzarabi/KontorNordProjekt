@@ -12,29 +12,54 @@ namespace _123123
 
         public void RegisterUser()
         {
+            string Firstname = "";
+            string Lastname = "";
+
             Console.WriteLine("===============================================".PadLeft(50));
             Console.WriteLine("               REGISTER BRUGER                 ".PadLeft(50));
             Console.WriteLine("===============================================".PadLeft(50));
 
-            Console.Write("Indtast Dit brugernavn: ");
-            string Username = Console.ReadLine().ToLower();
+            while (Firstname.Length < 4)
+            {
+                Console.Write("Indtast dit brugernavn Minimum 5 bogstaver:");
+                Firstname = Console.ReadLine().ToLower().Trim();
 
+                if (Firstname.Any(char.IsDigit) && Firstname == "")
+                {
+                    Console.WriteLine("fejl... Du skal indtase et navn med mindst 5 bogstaver, og ingen tal");
+             
+                }
+            }
+    
+           
+
+            // Trim fjerner mellemrum
             Console.Write("Indtast Dit adgangkode: ");
-            string Password = Console.ReadLine().ToLower();
+            string Password = Console.ReadLine().ToLower().Trim();
 
-            //automatisk tilføjer unikt id til UserID, +1 fordi ellers starer den ved nul
+            if(Password == "")
+            {
+                Console.WriteLine("");
+                Console.WriteLine("du skal indtaste en gyldigt gyldig adgangskode\nTryk på en vilkårlig tast for at vende tilbage til login");
+            }
+
+
+            //automatisk tilføjer unikt id til UserID, +1 fordi ellers starer den ved 0
             int UserID = _usersList.Count + 1;
 
             //opretter en ny bruger og tilføjer den til _userslisten
-            User NewUser = new User(Username, Password, UserID);
+            User NewUser = new User(Firstname, Lastname, Password, UserID);
             _usersList.Add(NewUser);
+
+       
+
         }
 
         public bool Login()
         {
             if (_usersList.Count == 0)
             {
-                Console.WriteLine("Du skal oprette en bruger først...\n Tryk på en vilkårlig tast for at forsætte");
+                Console.WriteLine("Du skal oprette en bruger først...\n Tryk på en vilkårlig tast for at vende tilbage til login");
                 Console.ReadKey();
                 return false;
             }
@@ -53,7 +78,7 @@ namespace _123123
             
             foreach (User user in _usersList)
             {
-                if (user._Username == Username && user._Password == Password)
+                if (user._Firstname == Username && user._Password == Password)
                 {
                     Console.WriteLine("Adgang givet");
                     Thread.Sleep(1000);

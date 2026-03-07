@@ -69,12 +69,12 @@ namespace _123123
             {
                 case "1":
                     Console.Clear();
-                    userService.RegisterBruger();
+                   
                     break;
 
                 case "2":
                     Console.Clear();
-                    userService.ShowUserList();
+                    
                     break;
 
                 case "3":
