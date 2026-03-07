@@ -39,13 +39,7 @@ namespace _123123
 
                 case "3":
                     Console.Clear();
-                    Console.WriteLine("Er du sikker på du gerne vil lukke programmet? Alt data slettes permenent ( JA / Nej )");
-                    string svar = Console.ReadLine().ToLower();
-                    if(svar == "ja")
-                    {
-                        Environment.Exit(0);
-                    }
-                   else {Console.Clear();}
+                    userService.LogOut();
                     break;
             }
         }

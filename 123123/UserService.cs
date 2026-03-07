@@ -101,7 +101,16 @@ namespace _123123
         }
        
     
-
+        public void LogOut()
+        {
+            Console.WriteLine("Er du sikker på du gerne vil lukke programmet? Alt data slettes permenent ( JA / Nej )");
+            string svar = Console.ReadLine().ToLower();
+            if (svar == "ja")
+            {
+                Environment.Exit(0);
+            }
+            else { Console.Clear(); }
+        }
           
         
 
