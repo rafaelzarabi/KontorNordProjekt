@@ -28,7 +28,6 @@ namespace _123123
                 if (Firstname.Any(char.IsDigit) && Firstname == "")
                 {
                     Console.WriteLine("fejl... Du skal indtase et navn med mindst 2 bogstaver, og ingen tal");
-             
                 }
             }
 
@@ -95,10 +94,7 @@ namespace _123123
                 }       
             }
            return false;
-            
         }
-
-        
 
         public void ShowUserList()        
         {
@@ -111,18 +107,15 @@ namespace _123123
             {
                 Console.WriteLine($"Navn: {user._Firstname} {user._Lastname}, ID: {user._UserID}");   
                 Console.WriteLine("");
-       
             }
 
             Console.WriteLine("");
             Console.WriteLine("Tryk på en vilkårlig tast for at vende tilbage til hovedmenuen....");
             Console.ReadKey();
-        
-        
         }
        
     
-        public bool LogOut()
+        public bool LogOutBool()
         {
             Console.WriteLine("Er du sikker på du gerne vil log ud? ( Ja / Nej )");
             string svar = Console.ReadLine().ToLower();

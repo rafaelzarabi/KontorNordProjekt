@@ -37,7 +37,7 @@ namespace _123123
 
                 case "4":
                     Console.Clear();
-                    return userService.LogOut();
+                    return userService.LogOutBool();
                     
             }
             return false;
@@ -45,7 +45,6 @@ namespace _123123
 
         public bool MainMenu()
         {
-            
             Console.Clear();
             Console.WriteLine("===============================================");
             Console.WriteLine("                   HOVEDMENU                   ");
@@ -56,7 +55,6 @@ namespace _123123
             Console.WriteLine("3)  Book et lokale");
             Console.WriteLine("4)  Log ud");
             
-
             string input = Console.ReadLine().ToLower();
 
             switch (input)
@@ -77,17 +75,11 @@ namespace _123123
                     break;
                 case "4":
                     Console.Clear();
-                    return userService.LogOut();
+                    return userService.LogOutBool();
                     
             }
             return false;
-        }
-
-      
-
-
-       
+        } 
     }
-    
 }
 
