@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Text;
 
 namespace _123123
@@ -8,6 +9,46 @@ namespace _123123
     {
         public string Name { get; private set; }
 
+        public void LogInMenu()
+        {
+            UserService userService = new UserService();
+            List<User> userlist = new List<User>();
+
+
+            Console.WriteLine("================================================");
+            Console.WriteLine("                     Log In                     ");
+            Console.WriteLine("================================================");
+
+            Console.WriteLine("1)  Log ind ");
+            Console.WriteLine("2)  Register bruger");
+            Console.WriteLine("3)  Afslut programmet");
+
+            string input = Console.ReadLine().ToLower();
+
+            switch (input)
+            {
+                case "1":
+                    Console.Clear();
+                    userService.Login();
+                    break;
+
+                case "2":
+                    Console.Clear();
+                    userService.ShowUserList();
+                    break;
+
+                case "3":
+                    Console.Clear();
+                    Console.WriteLine("Er du sikker på du gerne vil lukke programmet? Alt data slettes permenent ( JA / Nej )");
+                    string svar = Console.ReadLine().ToLower();
+                    if(svar == "ja")
+                    {
+                        Environment.Exit(0);
+                    }
+                   else {Console.Clear();}
+                    break;
+            }
+        }
 
         public void MainMenu()
         {
@@ -59,41 +100,11 @@ namespace _123123
             }
         }
 
-        public void LogInMenu()
-        {
-            UserService userService = new UserService();
-           List<User> userlist = new List<User>();
-           
-            
-            Console.WriteLine("================================================");
-            Console.WriteLine("                     Log In                     ");
-            Console.WriteLine("================================================");
-
-            Console.WriteLine("1)  Log ind ");
-            Console.WriteLine("2)  Register bruger");
-            Console.WriteLine("3)  Afslut programmet");
-
-            string input = Console.ReadLine().ToLower();
-
-            switch (input)
-            {
-                case "1":
-                    Console.Clear();
-                    userService.Login();
-                    break;
-
-                case "2":
-                    Console.Clear();
-                    userService.ShowUserList();
-                    break;
-
-                case "3":
-                    Console.Clear();
-
-                    break;
-            }
+      
 
 
-        }
+       
     }
+    
 }
+
