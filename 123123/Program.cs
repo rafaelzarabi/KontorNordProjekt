@@ -15,28 +15,16 @@ namespace _123123
             bool ProgramRunning = true;
             bool LogIn = false;
 
-
-            
-
             while (ProgramRunning == true)
             {
                 while (LogIn == false)
                 {
                     Console.Clear();
-                    LogIn =  menu.LogInMenuBool();   // Vi har en stafet med bool fra loginBool()-->loginMenuBool
+                    LogIn =  menu.LogInMenuBool();   // Vi har en stafet med bool fra loginBool()-->loginMenuBool-->Main
                 }        
                    
                Console.Clear();   
-               LogIn = menu.MainMenu();
-                
-                
-
-                
-
-
-
-
-                
+               LogIn = menu.MainMenu();      // Vi har en stafet med bool fra  LogOut()-->()-->mainMenu-->Main    
             }
 
 
