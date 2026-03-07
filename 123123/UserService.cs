@@ -14,34 +14,49 @@ namespace _123123
         {
             string Firstname = "";
             string Lastname = "";
+            string Password = "";
 
-            Console.WriteLine("===============================================".PadLeft(50));
-            Console.WriteLine("               REGISTER BRUGER                 ".PadLeft(50));
-            Console.WriteLine("===============================================".PadLeft(50));
+            Console.WriteLine("===============================================");
+            Console.WriteLine("               REGISTER BRUGER                 ");
+            Console.WriteLine("===============================================");
 
-            while (Firstname.Length < 4)
+            while (Firstname.Length < 2)
             {
-                Console.Write("Indtast dit brugernavn Minimum 5 bogstaver:");
+                Console.Write("Indtast dit Fornavn. Minimum 2 bogstaver:");
                 Firstname = Console.ReadLine().ToLower().Trim();
 
                 if (Firstname.Any(char.IsDigit) && Firstname == "")
                 {
-                    Console.WriteLine("fejl... Du skal indtase et navn med mindst 5 bogstaver, og ingen tal");
+                    Console.WriteLine("fejl... Du skal indtase et navn med mindst 2 bogstaver, og ingen tal");
              
                 }
             }
-    
-           
-
-            // Trim fjerner mellemrum
-            Console.Write("Indtast Dit adgangkode: ");
-            string Password = Console.ReadLine().ToLower().Trim();
-
-            if(Password == "")
+            while (Lastname.Length < 2)
             {
-                Console.WriteLine("");
-                Console.WriteLine("du skal indtaste en gyldigt gyldig adgangskode\nTryk på en vilkårlig tast for at vende tilbage til login");
+                // Trim fjerner mellemrum
+                Console.Write("Indtast dit efternavn. Minimum 2 bogstaver: ");
+                 Lastname = Console.ReadLine().ToLower().Trim();
+
+                if (Lastname.Any(char.IsDigit) && Lastname == "")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("fejl... Du skal indtase et Efter med mindst 2 bogstaver, og ingen tal\nTryk på en vilkårlig tast for at vende tilbage til login");
+                }
             }
+
+            while (Password.Length < 5)
+            {
+                // Trim fjerner mellemrum
+                Console.Write("Indtast din adgangkode. Mindst 5 tegn: ");
+                Password = Console.ReadLine().ToLower().Trim();
+
+                if (Password == "")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("du skal indtaste en gyldig adgangskode");
+                }
+            }
+            
 
 
             //automatisk tilføjer unikt id til UserID, +1 fordi ellers starer den ved 0
