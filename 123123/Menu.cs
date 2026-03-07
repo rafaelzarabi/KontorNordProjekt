@@ -14,7 +14,6 @@ namespace _123123
             Console.WriteLine("================================================");
             Console.WriteLine("                     Log In                     ");
             Console.WriteLine("================================================");
-
             Console.WriteLine("1)  Log ind ");
             Console.WriteLine("2)  Register bruger");
             Console.WriteLine("3)  Se alle registeret brugere");
@@ -27,7 +26,6 @@ namespace _123123
                 case "1":
                     Console.Clear();
                     return userService.LoginBool();
-                 
                 case "2":
                     Console.Clear();
                     userService.RegisterUser();
@@ -39,8 +37,8 @@ namespace _123123
 
                 case "4":
                     Console.Clear();
-                    userService.LogOut();
-                    break;
+                    return userService.LogOut();
+                    
             }
             return false;
         }

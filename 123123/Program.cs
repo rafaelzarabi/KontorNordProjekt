@@ -22,13 +22,12 @@ namespace _123123
             {
                 while (menu.LogInMenuBool() == false)
                 {
-
                     Console.Clear();
-                    //Vi har en stafet med bool metoder fra main, til loginmenu, til login
-                    menu.LogInMenuBool();
+                    menu.LogInMenuBool();   // Vi har en stafet med bool fra loginBool()-->loginMenuBool
                 }        
-                    Console.Clear();
-                    menu.MainMenu();
+                   
+                Console.Clear();   
+                menu.MainMenu();
                 
                 
 
