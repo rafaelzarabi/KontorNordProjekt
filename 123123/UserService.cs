@@ -29,19 +29,39 @@ namespace _123123
             User NewUser = new User(Username, Password, UserID);
             _usersList.Add(NewUser);
         }
-       
-        public void Login(string Username, string Password)
+
+        public void Login()
         {
+            bool login = false;
+            
+            while (login = false) 
+            { 
 
-            foreach (var user in _usersList)
-            {
+   
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                    Log in                     ".PadLeft(50));        
+                Console.WriteLine("===============================================".PadLeft(50));
 
+                Console.Write("Indtast Dit brugernavn: ");
+                string Username = Console.ReadLine().ToLower();
 
+                Console.Write("Indtast Dit adgangkode: ");
+                string Password = Console.ReadLine().ToLower();
 
-                if (user._Username == Username && user._Password == Password)
+            
+                foreach (User user in _usersList)
                 {
-                    Console.WriteLine("Login succesfuldt!");
-                    return; // Stop metoden her, da vi har fundet brugeren
+
+                    if (user._Username == Username && user._Password == Password)
+                    {
+                        Console.WriteLine("Adgang givet");
+                        Thread.Sleep(1000);
+                        login = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Forkert brugernavn eller adgangkode... Prøv venligst igen");
+                    }
                 }
 
 
@@ -50,7 +70,12 @@ namespace _123123
 
 
 
-            }    
+
+
+
+
+            }
+            
         }
 
         

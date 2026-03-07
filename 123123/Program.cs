@@ -17,7 +17,7 @@ namespace _123123
 
              
 
-                string input = Console.ReadLine().ToLower();
+               
 
 
               

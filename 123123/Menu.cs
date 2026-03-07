@@ -62,9 +62,9 @@ namespace _123123
         public void LogInMenu()
         {
             UserService userService = new UserService();
-          
+           List<User> userlist = new List<User>();
            
-
+            
             Console.WriteLine("================================================");
             Console.WriteLine("                     Log In                     ");
             Console.WriteLine("================================================");
