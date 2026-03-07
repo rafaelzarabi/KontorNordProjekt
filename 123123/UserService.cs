@@ -69,8 +69,8 @@ namespace _123123
             Console.WriteLine("===============================================".PadLeft(50));
 
             
-            Console.Write("Indtast Dit brugernavn: ");
-            string Username = Console.ReadLine().ToLower();
+            Console.Write("Indtast Dit Fornavn: ");
+            string Firstname = Console.ReadLine().ToLower();
 
             Console.Write("Indtast Dit adgangkode: ");
             string Password = Console.ReadLine().ToLower();
@@ -78,7 +78,7 @@ namespace _123123
             
             foreach (User user in _usersList)
             {
-                if (user._Firstname == Username && user._Password == Password)
+                if (user._Firstname == Firstname && user._Password == Password)
                 {
                     Console.WriteLine("Adgang givet");
                     Thread.Sleep(1000);
@@ -100,7 +100,7 @@ namespace _123123
 
             foreach (var user in _usersList)       
             {
-                Console.WriteLine($"Navn: {user._Username}, ID: {user._UserID}");   
+                Console.WriteLine($"Navn: {user._Firstname} {user._Lastname}, ID: {user._UserID}");   
                 Console.WriteLine("");
             }
 
