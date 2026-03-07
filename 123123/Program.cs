@@ -20,14 +20,14 @@ namespace _123123
 
             while (ProgramRunning == true)
             {
-                while (menu.LogInMenuBool() == false)
+                while (LogIn == false)
                 {
                     Console.Clear();
-                    menu.LogInMenuBool();   // Vi har en stafet med bool fra loginBool()-->loginMenuBool
+                    LogIn =  menu.LogInMenuBool();   // Vi har en stafet med bool fra loginBool()-->loginMenuBool
                 }        
                    
-                Console.Clear();   
-                menu.MainMenu();
+               Console.Clear();   
+               LogIn = menu.MainMenu();
                 
                 
 

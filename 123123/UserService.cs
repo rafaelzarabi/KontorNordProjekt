@@ -79,14 +79,12 @@ namespace _123123
             Console.WriteLine("                    Log in                     ".PadLeft(50));        
             Console.WriteLine("===============================================".PadLeft(50));
 
-            
             Console.Write("Indtast Dit Fornavn: ");
             string Firstname = Console.ReadLine().ToLower();
 
             Console.Write("Indtast Dit adgangkode: ");
             string Password = Console.ReadLine().ToLower();
-
-            
+ 
             foreach (User user in _usersList)
             {
                 if (user._Firstname == Firstname && user._Password == Password)

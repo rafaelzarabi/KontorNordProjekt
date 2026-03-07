@@ -43,7 +43,7 @@ namespace _123123
             return false;
         }
 
-        public void MainMenu()
+        public bool MainMenu()
         {
             
             Console.Clear();
@@ -77,9 +77,10 @@ namespace _123123
                     break;
                 case "4":
                     Console.Clear();
-                    userService.LogOut();
-                    break;
+                    return userService.LogOut();
+                    
             }
+            return false;
         }
 
       
