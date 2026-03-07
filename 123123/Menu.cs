@@ -56,10 +56,10 @@ namespace _123123
             Console.WriteLine("===============================================");
 
             Console.WriteLine("1)  Status på lokaler");
-            Console.WriteLine("1)  Status på lokaler");
-            Console.WriteLine("1)  Status på lokaler");
-            Console.WriteLine("1)  Status på lokaler");
-            Console.WriteLine("1)  Status på lokaler");
+            Console.WriteLine("2)  Lokale information");
+            Console.WriteLine("3)  Book et lokale");
+            Console.WriteLine("4)  Log ud");
+            
 
             string input = Console.ReadLine().ToLower();
 
@@ -67,33 +67,22 @@ namespace _123123
             {
                 case "1":
                     Console.Clear();
-                   
+                   // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: MARIE
                     break;
 
                 case "2":
                     Console.Clear();
-                    
+                    // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: NEEGA
                     break;
 
                 case "3":
                     Console.Clear();
-
+                    // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: RAFAEL
                     break;
                 case "4":
                     Console.Clear();
-
+                    userService.LogOut();
                     break;
-
-                case "5":
-                    Console.Clear();
-
-                    break;
-
-                case "6":
-                    Console.Clear();
-
-                    break;
-
             }
         }
 
