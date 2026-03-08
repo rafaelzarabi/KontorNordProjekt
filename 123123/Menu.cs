@@ -43,7 +43,7 @@ namespace _123123
             return false;
         }
 
-        public bool MainMenu()
+        public bool MainMenuBool()
         {
             Console.Clear();
             Console.WriteLine("===============================================");
@@ -54,26 +54,26 @@ namespace _123123
             Console.WriteLine("2)  Lokale information");
             Console.WriteLine("3)  Book et lokale");
             Console.WriteLine("4)  Log ud");
-            
-            string input = Console.ReadLine().ToLower();
 
-            switch (input)
+            ConsoleKeyInfo keyinfo = Console.ReadKey();
+
+            switch (keyinfo.KeyChar)
             {
-                case "1":
+                case '1':
                     Console.Clear();
                    // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: MARIE
                     break;
 
-                case "2":
+                case '2':
                     Console.Clear();
                     // lav en nyt objekt der kalder på klassen oppe i toppen uden for denne metoden, og kald metoden fra klassen her: NEEGA
                     break;
 
-                case "3":
+                case '3':
                     Console.Clear();
                     // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: RAFAEL
                     break;
-                case "4":
+                case '4':
                     Console.Clear();
                     return userService.LogOutBool();
                     

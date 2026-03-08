@@ -64,13 +64,12 @@ namespace _123123
             User NewUser = new User(Firstname, Lastname, Password, UserID);
             _usersList.Add(NewUser);
         }
-
         public bool LoginBool()
         {
             if (_usersList.Count == 0)
             {
-                Console.WriteLine("Du skal oprette en bruger først...\n Tryk på en vilkårlig tast for at vende tilbage til login");
-                Console.ReadKey();
+                Console.WriteLine("Du skal oprette en bruger først!");
+                Thread.Sleep(1000);
                 return false;
             }
 
@@ -105,6 +104,7 @@ namespace _123123
 
             foreach (User user in _usersList)       
             {
+                Console.WriteLine("");
                 Console.WriteLine($"Navn: {user._Firstname} {user._Lastname}, ID: {user._UserID}");   
                 Console.WriteLine("");
             }
@@ -114,7 +114,6 @@ namespace _123123
             Console.ReadKey();
         }
        
-    
         public bool LogOutBool()
         {
             Console.WriteLine("Er du sikker på du gerne vil log ud? ( Ja / Nej )");

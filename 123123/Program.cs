@@ -24,7 +24,7 @@ namespace _123123
                 }        
                    
                Console.Clear();   
-               LogIn = menu.MainMenu();      // Vi har en stafet med bool fra  LogOut()-->mainMenu()-->Main()    
+               LogIn = menu.MainMenuBool();      // Vi har en stafet med bool fra  LogOut()-->mainMenu()-->Main()    
             }
 
 

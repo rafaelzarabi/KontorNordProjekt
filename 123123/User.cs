@@ -12,7 +12,6 @@ namespace _123123
         public string _Password { get; private set; }
         public int _UserID { get; private set; }
 
-
         //klassens Constructor 
         public User(string Firstname, string Lastname, string Password, int UserID)
         {
