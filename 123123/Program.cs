@@ -27,7 +27,7 @@ namespace _123123
                LogIn = menu.MainMenuBool();      // Vi har en stafet med bool fra  LogOut()-->mainMenu()-->Main()    
             }
 
-
+           
 
 
 

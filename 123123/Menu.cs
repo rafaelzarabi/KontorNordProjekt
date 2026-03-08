@@ -61,24 +61,27 @@ namespace _123123
             {
                 case '1':
                     Console.Clear();
-                   // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: MARIE
+                    // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: MARIE
+                    Console.WriteLine("test");
                     break;
 
                 case '2':
                     Console.Clear();
                     // lav en nyt objekt der kalder på klassen oppe i toppen uden for denne metoden, og kald metoden fra klassen her: NEEGA
+                    Console.WriteLine("test");
                     break;
 
                 case '3':
                     Console.Clear();
                     // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden, og kald metoden fra klassen her: RAFAEL
+                    Console.WriteLine("test");
                     break;
                 case '4':
                     Console.Clear();
                     return userService.LogOutBool();
                     
             }
-            return false;
+            return true;
         } 
     }
 }
