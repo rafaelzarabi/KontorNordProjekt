@@ -11,6 +11,7 @@ namespace _123123
             // kalder klassen, så jeg kan bruge den i main
             Menu menu = new Menu();
             UserService userService = new UserService();
+            
 
             bool ProgramRunning = true;
             bool LogIn = false;
@@ -19,6 +20,7 @@ namespace _123123
             {
                 while (LogIn == false)
                 {
+                   
                     Console.Clear();
                     LogIn = menu.LogInMenuBool();   // Vi har en return stafet med bool fra loginBool()-->loginMenuBool-->Main
                 }

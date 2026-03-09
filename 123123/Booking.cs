@@ -1,12 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _123123
 {
     internal class Booking
     {
-        // Liste over alle bookinger
+        // Hvad indeholder en booking? Den er tilknyttet en USER, har et navn og et tidspunkt på dagen 1, 2, 3 = morgen, middag, eftermiddag
+        public User _User { get; private set; }
+        public string _Name { get; private set; }
+        public int _TimeSlot { get; private set; }
+
+
         public static List<string> bookings = new List<string>();
+        
+
+        // constructor - til når vi skal oprette et booking objekt, som indeholder et NAME og TIMESLOT
+        public Booking(User User, string Name, int Timeslot)
+        {
+            _User = User;
+             _Name = Name;
+            _TimeSlot = Timeslot;
+        }
+       
+
 
         public void BookRoom()
         {
@@ -104,5 +121,32 @@ namespace _123123
             Console.WriteLine("\nTryk på en tast for at fortsætte...");
             Console.ReadKey();
         }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
