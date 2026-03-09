@@ -4,29 +4,29 @@ using System.Text;
 
 namespace _123123
 {
-    internal class Lokaler
+    internal class Rooms
     {
         public string Name  { get; private set; }
         public int SeatsAmount { get; private set; }
         public bool HasWhiteboard { get; private set; }
         public bool HasProjector { get; private set; }
         
-        public Lokaler(string name, int seatsAmount, bool hasWhiteboard, bool hasProjector)
+        public Rooms(string name, int seatsAmount, bool hasWhiteboard, bool hasProjector)
         {
             Name = name;
             SeatsAmount = seatsAmount;
             HasWhiteboard = hasWhiteboard;
             HasProjector = hasProjector;
         }
-        public static List<Lokaler> GetLokaler()
+        public static List<Rooms> GetLokaler()
         {
-            List<Lokaler> lokaler = new List<Lokaler>();
+            List<Rooms> rooms = new List<Rooms>();
     
-            lokaler.Add(new Lokaler("A", 70, true, true));
-            lokaler.Add(new Lokaler("B", 40, true, false));
-            lokaler.Add(new Lokaler("C", 20, false, true));
+            rooms.Add(new Rooms("A", 70, true, true));
+            rooms.Add(new Rooms("B", 40, true, false));
+            rooms.Add(new Rooms("C", 20, false, true));
             
-            return lokaler; 
+            return rooms; 
         }
     }
 }

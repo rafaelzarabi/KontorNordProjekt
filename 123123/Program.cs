@@ -45,11 +45,11 @@ namespace _123123
             } 
             
             //LOKALE INFO - FRA LOKALER.CS KLASSE
-            List<Lokaler> lokaler = Lokaler.GetLokaler();
+            List<Rooms> rooms = Rooms.GetLokaler();
 
-            foreach (var lokale in lokaler)
+            foreach (var room in rooms)
             {
-                Console.WriteLine($"Lokale {lokale.Name} ({lokale.SeatsAmount} pladser) - {(lokale.HasWhiteboard ? "Whiteboard" : "Ingen whiteboard")} - {(lokale.HasProjector ? "Projektor" : "Ingen projektor")}");
+                Console.WriteLine($"Lokale {room.Name} ({room.SeatsAmount} pladser) - {(room.HasWhiteboard ? "Whiteboard" : "Ingen whiteboard")} - {(room.HasProjector ? "Projektor" : "Ingen projektor")}");
             }
         }
     }
