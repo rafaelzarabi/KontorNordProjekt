@@ -27,8 +27,7 @@ namespace _123123
                 LogIn = menu.MainMenuBool();      // Vi har en return stafet med bool fra  LogOut()-->mainMenu()-->Main()    
             }
         }
-
-
+        
         public void CloseProgram()
         {
             Console.WriteLine("Er du sikker på du vil afslutte programmet?\n At afslutte programmet fjerne af indtastet data");
@@ -43,6 +42,14 @@ namespace _123123
                     break;
                 case '2':
                 break;
+            } 
+            
+            //LOKALE INFO - FRA LOKALER.CS KLASSE
+            List<Lokaler> lokaler = Lokaler.GetLokaler();
+
+            foreach (var lokale in lokaler)
+            {
+                Console.WriteLine($"Lokale {lokale.Name} ({lokale.SeatsAmount} pladser) - {(lokale.HasWhiteboard ? "Whiteboard" : "Ingen whiteboard")} - {(lokale.HasProjector ? "Projektor" : "Ingen projektor")}");
             }
         }
     }
