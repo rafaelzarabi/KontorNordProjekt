@@ -8,59 +8,88 @@ namespace _123123
     {
         // Hvad indeholder en booking? Den er tilknyttet en USER, har et navn og et tidspunkt på dagen 1, 2, 3 = morgen, middag, eftermiddag
         public string _NameOfTheBooker { get; private set; }
-        public string _TimeOfDay { get; private set; }
+        public string _roomname { get; private set; }
         public int _TimeSlot { get; private set; }
 
 
         public static List<Booking> bookings = new List<Booking>();
         List<Rooms> rooms = Rooms.GetLokaler();
-     
-       
-        
+
+
+
         // constructor - til når vi skal oprette et booking objekt, som indeholder et NAME og TIMESLOT
-        public Booking(string NameOfTheBooker, string TimeOfDay, int Timeslot)
+        public Booking(string NameOfTheBooker,string Roomname, int Timeslot)
         {
             _NameOfTheBooker = NameOfTheBooker;
-            _TimeOfDay = TimeOfDay;
+            _roomname = Roomname;
             _TimeSlot = Timeslot;
         }
 
         public void BookRoomLangberg()
         {
-            Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
-            string NameOfTheBooker = Console.ReadLine().ToLower().Trim();
-
-            Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
-            string TimeOfDay = Console.ReadLine().ToLower().Trim();
-
-            Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
-            string Timeslot = Console.ReadLine().ToLower().Trim();
-
-
+            string NameOfTheBooker;
+            string Roomname;
+            int Timeslot;
             foreach (var rooms in Rooms.GetLokaler())
-            { 
+            {
                 Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
             }
 
+            Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
+            NameOfTheBooker = Console.ReadLine().ToLower().Trim();
+
             Console.WriteLine("Vælg det lokale du gerne vil rersaver ");
             Console.WriteLine("1) lokale A ");
-            Console.WriteLine("1) lokale b ");
-            Console.WriteLine("1) lokale c ");
+            Console.WriteLine("2) lokale b ");
+            Console.WriteLine("3) lokale c ");
 
-            //opretter en ny bruger og tilføjer den til _userslisten
-            Booking NewBooking = new Booking(NameOfTheBooker, TimeOfDay, Timeslot);
-            bookings.Add(NewBooking);
-
-
+            Roomname = Console.ReadLine();
+            
+            
 
 
+            
+            
+            
+            
+            switch (Timeslot)
+            {
+                case 1:
+                    Roomname = 
 
+                    break;
+                case 2:
+
+
+                    break;
+                case 3:
+
+
+                    break;
+
+            }
 
         }
 
+
+
+
+
+        /*
+        //opretter en ny bruger og tilføjer den til _userslisten
+        Booking NewBooking = new Booking(NameOfTheBooker, Timeslot);
+            bookings.Add(NewBooking);
+
+        */
+
+
+
+
+
+
         public void BookRoom()
         {
-            
+
 
             Console.WriteLine("Vælg et lokale:");
 
@@ -126,7 +155,7 @@ namespace _123123
 
                 break;
             }
-
+            /*
             string bookingText = $"Lokale {selectedRoom.Name} er booket i {timeSlot}";
 
             Console.Clear();
@@ -156,8 +185,7 @@ namespace _123123
             Console.ReadKey();
         }
 
- 
-       
+ */
 
 
 
@@ -182,5 +210,8 @@ namespace _123123
 
 
 
-    }
+
+        }
+    
+    } 
 }
