@@ -9,7 +9,7 @@ namespace _123123
     {
         UserService userService = new UserService();
         Program program = new Program();
-       
+        Booking booking = new Booking("","",0);
 
 
         public bool LogInMenuBool()
@@ -78,7 +78,7 @@ namespace _123123
 
                 case '3':
                     Console.Clear();
-                    
+                    booking.BookRoomLangberg();
                     break;
                 case '4':
                     Console.Clear();

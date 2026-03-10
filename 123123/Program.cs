@@ -20,8 +20,6 @@ namespace _123123
             {
                 while (LogIn == false)
                 {
-                  
-                    
                     Console.Clear();
                     LogIn = menu.LogInMenuBool();   // Vi har en return stafet med bool fra loginBool()-->loginMenuBool-->Main
                 }
