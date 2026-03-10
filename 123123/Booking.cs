@@ -81,24 +81,25 @@ namespace _123123
 			Console.WriteLine("5) Fredag");
 
 			string dagInput = Console.ReadLine();
-			string valgtDag = "";
+
+            Day valgtDag;
 
 			switch (dagInput)
 			{
 				case "1":
-					valgtDag = "Mandag";
+                    valgtDag = Day.Mandag;
 					break;
 				case "2":
-					valgtDag = "Tirsdag";
+                    valgtDag = Day.Tirsdag;
 					break;
 				case "3":
-					valgtDag = "Onsdag";
+                    valgtDag = Day.Onsdag;
 					break;
 				case "4":
-					valgtDag = "Torsdag";
+                    valgtDag = Day.Torsdag;
 					break;
 				case "5":
-					valgtDag = "Fredag";
+                    valgtDag = Day.Fredag;
 					break;
 
 				default:
@@ -115,18 +116,18 @@ namespace _123123
 			Console.WriteLine("3) Eftermiddage 12:00 - 14:00");
 
 			string timeInput = Console.ReadLine();
-			string timeSlot = "";
+            
 
 			switch (timeInput)
 			{
 				case "1":
-					timeSlot = "Morgen";
+                    timeSlot = TimeSlot.Morgen;
 					break;
 				case "2":
-					timeSlot = "Formiddag";
+                    timeSlot = TimeSlot.Formiddag;
 					break;
 				case "3":
-					timeSlot = "Eftermiddag";
+                    timeSlot = TimeSlot.Eftermiddag;
 					break;
 
 				default:
