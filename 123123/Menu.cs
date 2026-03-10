@@ -73,7 +73,7 @@ namespace _123123
 
                 case '3':
                     Console.Clear();
-                    booking.BookRoom();
+                    
                     break;
                 case '4':
                     Console.Clear();

@@ -14,10 +14,10 @@ namespace _123123
         public int _TimeSlot { get; private set; }
 
 
-        public static List<string> bookings = new List<Bo>();
+        
         List<Rooms> rooms = Rooms.GetLokaler();
 
-
+        /*
 
         public void BookRoom()
         {
@@ -175,12 +175,13 @@ namespace _123123
 
 			Console.WriteLine("Tryk på en tast for at fortsætte...");
 			Console.ReadKey();
-
-		} 
+        */
+		
+    } 
 
 
 
         
     
-    } 
-}
+   
+} 

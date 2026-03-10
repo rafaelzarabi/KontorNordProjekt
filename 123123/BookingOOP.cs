@@ -16,31 +16,58 @@ namespace _123123
         public User BookedBy { get; set; }        // Den bruger, der har booket, null hvis ledig
 
 
-        List<Booking> bookings = new List<Booking>() 
+
+
+        public static List<Booking> BoookingSlots = new List<Booking>() // static så alle programmer kan se den og ikke behøves og kalde den
         {
-            new Booking { Day = DayOfWeek.Monday, TimeSlot = "Morgen", BookedBy = null },
-            new Booking { Day = DayOfWeek.Monday, TimeSlot = "Formiddag", BookedBy = null },
-            new Booking { Day = DayOfWeek.Monday, TimeSlot = "Middag", BookedBy = null },
-            new Booking { Day = DayOfWeek.Tuesday, TimeSlot = "Morgen", BookedBy = null },
-            new Booking { Day = DayOfWeek.Tuesday, TimeSlot = "Formiddag", BookedBy = null },
-            new Booking { Day = DayOfWeek.Tuesday, TimeSlot = "Middag", BookedBy = null }
-            new Booking { Day = DayOfWeek.Wednesday, TimeSlot = "Morgen", BookedBy = null },
-            new Booking { Day = DayOfWeek.Wednesday, TimeSlot = "Formiddag", BookedBy = null },
-            new Booking { Day = DayOfWeek.Wednesday, TimeSlot = "Middag", BookedBy = null },
-            new Booking { Day = DayOfWeek.Thursday, TimeSlot = "Morgen", BookedBy = null },
-            new Booking { Day = DayOfWeek.Thursday, TimeSlot = "Formiddag", BookedBy = null },
-            new Booking { Day = DayOfWeek.Thursday, TimeSlot = "Middag", BookedBy = null }
+            new Booking { Day = DayOfWeek.Monday, TimeSlot = "Morgen", BookedBy = null},
+            new Booking { Day = DayOfWeek.Monday, TimeSlot = "Formiddag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Monday, TimeSlot = "Middag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Tuesday, TimeSlot = "Morgen", BookedBy = null},
+            new Booking { Day = DayOfWeek.Tuesday, TimeSlot = "Formiddag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Tuesday, TimeSlot = "Middag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Wednesday, TimeSlot = "Morgen", BookedBy = null},
+            new Booking { Day = DayOfWeek.Wednesday, TimeSlot = "Formiddag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Wednesday, TimeSlot = "Middag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Thursday, TimeSlot = "Morgen", BookedBy = null},
+            new Booking { Day = DayOfWeek.Thursday, TimeSlot = "Formiddag", BookedBy = null},
+            new Booking { Day = DayOfWeek.Thursday, TimeSlot = "Middag", BookedBy = null}
+
+        };
+
+
+        public static void bookRoom()
+        {
+            int BookingNummer = 1;
+            foreach (Booking slot in BoookingSlots)
+            {
+                string status;
+                if (slot.BookedBy == null)
+                {
+                    status = "LEDIG";
+                }
+                else
+                {
+                    status = "OPTAGET af " + slot.BookedBy._Firstname;
+                }
+
+                Console.WriteLine($"{BookingNummer} {slot.Day}");
+                BookingNummer++;
+
+            }
+
+
+
+
 
 
         }
-
-
-
-
-
-
-
-
-
     }
+        
+
+
+
+
+
+    
 }
