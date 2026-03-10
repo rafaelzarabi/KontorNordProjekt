@@ -1,15 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _123123
 {
 	internal class Booking
 	{
+
+		// Hvad indeholder en booking? Den er tilknyttet en USER, har et navn og et tidspunkt på dagen 1, 2, 3 = morgen, middag, eftermiddag
+		public string _NameOfTheBooker { get; private set; }
+		public string _roomname { get; private set; }
+		public int _TimeSlot { get; private set; }
+
+
 		public static List<string> bookings = new List<string>();
+		List<Rooms> rooms = Rooms.GetLokaler();
+
+
 
 		public void BookRoom()
 		{
-
 			List<Rooms> lokaler = Rooms.GetLokaler();
 			string NameOfTheBooker = "";
 			string Roomname = "";
@@ -19,47 +30,38 @@ namespace _123123
 			{
 				Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
 			}
-
+			Console.WriteLine("");
 			Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
-			NameOfTheBooker = Console.ReadLine().ToLower().Trim();
+			_NameOfTheBooker = Console.ReadLine().ToLower().Trim();
 
 			Console.WriteLine("Vælg det lokale du gerne vil rersaver ");
 			Console.WriteLine("1) lokale A ");
 			Console.WriteLine("2) lokale b ");
 			Console.WriteLine("3) lokale c ");
 
-			Roomname = Console.ReadLine();
+			_roomname = Console.ReadLine();
 
-			Console.Clear();
-			
-			//Vælg lokale
-			Console.WriteLine("Vælg lokale:");
-			Console.WriteLine("1) Lokale A");
-			Console.WriteLine("2) Lokale B");
-			Console.WriteLine("3) Lokale C");
-
-
-			string roomInput = Console.ReadLine();
-			string valgtLokale = "";
-
-			switch (roomInput)
+			switch (Roomname)
 			{
 				case "1":
-					valgtLokale = "A";
+					Roomname = lokaler[0].Name;
 					break;
 
 				case "2":
-					valgtLokale = "B";
-					break;
+					Roomname = lokaler[1].Name;
 
+					break;
 				case "3":
-					valgtLokale = "C";
+					Roomname = lokaler[2].Name;
+
 					break;
 
 				default:
+
 					Console.WriteLine("Ugyldigt valg");
 					Console.ReadKey();
 					return;
+
 			}
 
 			// Vælg dag
@@ -72,24 +74,29 @@ namespace _123123
 			Console.WriteLine("5) Fredag");
 
 			string dagInput = Console.ReadLine();
-			string valgtDag = "";
+
+			Day valgtDag;
 
 			switch (dagInput)
 			{
 				case "1":
-					valgtDag = "Mandag";
+					valgtDag = Day.Mandag;
 					break;
+
 				case "2":
-					valgtDag = "Tirsdag";
+					valgtDag = Day.Tirsdag;
 					break;
+
 				case "3":
-					valgtDag = "Onsdag";
+					valgtDag = Day.Onsdag;
 					break;
+
 				case "4":
-					valgtDag = "Torsdag";
+					valgtDag = Day.Torsdag;
 					break;
+
 				case "5":
-					valgtDag = "Fredag";
+					valgtDag = Day.Fredag;
 					break;
 
 				default:
@@ -103,30 +110,34 @@ namespace _123123
 			Console.WriteLine("Vælg tidsrum:");
 			Console.WriteLine("1) Morgen      08:00 - 10:00");
 			Console.WriteLine("2) Formiddag   10:00 - 12:00");
-			Console.WriteLine("3) Eftermiddag 12:00 - 14:00");
+			Console.WriteLine("3) Eftermiddage 12:00 - 14:00");
 
 			string timeInput = Console.ReadLine();
-			string timeSlot = "";
+			TimeSlot timeSlot;
 
 			switch (timeInput)
 			{
 				case "1":
-					timeSlot = "Morgen";
+					timeSlot = TimeSlot.Morgen;
 					break;
+
 				case "2":
-					timeSlot = "Formiddag";
+					timeSlot = TimeSlot.Formiddag;
 					break;
+
 				case "3":
-					timeSlot = "Eftermiddag";
+					timeSlot = TimeSlot.Eftermiddag;
 					break;
 
 				default:
 					Console.WriteLine("Ugyldigt valg");
 					Console.ReadKey();
 					return;
+
+
 			}
 
-			string bookingText = $"Lokale {valgtLokale} er booket i {timeSlot} på {valgtDag}";
+			string bookingText = $"Lokale {Roomname} er booket {timeSlot}, {valgtDag}";
 
 			// Bekræft booking
 
@@ -164,6 +175,12 @@ namespace _123123
 
 			Console.WriteLine("Tryk på en tast for at fortsætte...");
 			Console.ReadKey();
+
 		}
+
+
+
+
+
 	}
 }
