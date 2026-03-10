@@ -38,7 +38,7 @@ namespace _123123
             {
                 Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
             }
-
+            Console.WriteLine("");
             Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
             NameOfTheBooker = Console.ReadLine().ToLower().Trim();
 
