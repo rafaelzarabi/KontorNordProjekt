@@ -9,12 +9,29 @@ namespace _123123
 
 		public void BookRoom()
 		{
+
+			List<Rooms> lokaler = Rooms.GetLokaler();
+			string NameOfTheBooker = "";
+			string Roomname = "";
+			int Timeslot = 0;
+
+			foreach (var rooms in Rooms.GetLokaler())
+			{
+				Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
+			}
+
+			Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
+			NameOfTheBooker = Console.ReadLine().ToLower().Trim();
+
+			Console.WriteLine("Vælg det lokale du gerne vil rersaver ");
+			Console.WriteLine("1) lokale A ");
+			Console.WriteLine("2) lokale b ");
+			Console.WriteLine("3) lokale c ");
+
+			Roomname = Console.ReadLine();
+
 			Console.Clear();
-
-            //string så vi kan sætte hvem der har 
-            Console.WriteLine("Hvad er navnet på mødeansvarlige");
-			string meeting = Console.ReadLine();
-
+			
 			//Vælg lokale
 			Console.WriteLine("Vælg lokale:");
 			Console.WriteLine("1) Lokale A");
