@@ -33,16 +33,16 @@ namespace _123123
 		{
 
 			string[] tider = { "Morgen", "Formiddag", "Eftermiddag" };
-			string[] dage = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };
+			string[] dage = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" }; //arrays for tider og dage til skema, evt tag navenene fra enums
 
 
-			List <Rooms> rooms =  GetLokaler();
+			List <Rooms> rooms =  GetLokaler(); //just in case
 
-			for (int dag = 0; dag < dage.Length; dag++)
+			for (int dag = 0; dag < dage.Length; dag++) 
 			{
 
 
-				Console.WriteLine($"=== {dage[dag]} ===");
+				Console.WriteLine($"=== {dage[dag]} ==="); //looper gennem dagene
 				Console.WriteLine("========================================================================".PadLeft(50));
 				Console.WriteLine("             |      Lokale A     |     Lokale B     |     Lokale C     |".PadLeft(50));
 				Console.WriteLine("========================================================================".PadLeft(50));
@@ -54,7 +54,7 @@ namespace _123123
 					bool lokaleB = false;
 					bool lokaleC = false;
 
-					foreach (string booking in Booking.bookings)
+					foreach (string booking in Booking.bookings) //looper over om de forskellige dage i tidsrum er bookede. Hvis det er booked, bliver bools nu true
 					{
 						if (booking == "Lokale A er booket i " + tider[tid])
 						{
@@ -72,7 +72,7 @@ namespace _123123
 						}
 					}
 
-					string statusA;
+					string statusA; //hvis booket, eller hvis ikke booket, skal det skrive det ud 
 					if (lokaleA == true)
 						statusA = "Reserveret af: ";
 					else
@@ -90,7 +90,10 @@ namespace _123123
 					else
 						statusC = "Ledig";
 
+				
 					Console.WriteLine(tider[tid].PadRight(19) + statusA.PadRight(19) + statusB.PadRight(19) + statusC);
+
+					//skriver tidsrum i første colonne
 				}
 
 				Console.WriteLine();
