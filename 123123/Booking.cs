@@ -48,7 +48,6 @@ namespace _123123
 
             Roomname = Console.ReadLine();
 
-
             switch (Roomname)
             {
                 case "1":
@@ -64,7 +63,13 @@ namespace _123123
 
                     break;
 
-            }
+				default:
+
+					Console.WriteLine("Ugyldigt valg");
+					Console.ReadKey();
+					return;
+
+			}
 
 			// Vælg dag
 			Console.Clear();
