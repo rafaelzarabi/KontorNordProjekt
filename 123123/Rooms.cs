@@ -33,7 +33,7 @@ namespace _123123
 
 		public static void LokaleStatus()
         {
-			Booking booking = new Booking("", "", 0);
+			Booking booking = new Booking();
 
 			string[] tider = { "Morgen", "Formiddag", "Eftermiddag" };
 			string[] dage = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };

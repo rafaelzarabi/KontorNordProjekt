@@ -19,14 +19,6 @@ namespace _123123
 
 
 
-        // constructor - til når vi skal oprette et booking objekt, som indeholder et NAME og TIMESLOT
-        public Booking(string NameOfTheBooker,string Roomname, int Timeslot)
-        {
-            _NameOfTheBooker = NameOfTheBooker;
-            _roomname = Roomname;
-            _TimeSlot = Timeslot;
-        }
-
         public void BookRoom()
         {
             List<Rooms> lokaler = Rooms.GetLokaler();
@@ -47,7 +39,7 @@ namespace _123123
             Console.WriteLine("2) lokale b ");
             Console.WriteLine("3) lokale c ");
 
-            Roomname = Console.ReadLine();
+            _roomname = Console.ReadLine();
 
             switch (Roomname)
             {
