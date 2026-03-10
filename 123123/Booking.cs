@@ -14,7 +14,7 @@ namespace _123123
         public int _TimeSlot { get; private set; }
 
 
-        public static List<string> bookings = new List<string>();
+        public static List<Booking> bookings = new List<Booking>();
         List<Rooms> rooms = Rooms.GetLokaler();
 
 
@@ -22,13 +22,12 @@ namespace _123123
         public void BookRoom()
         {
             List<Rooms> lokaler = Rooms.GetLokaler();
-            string NameOfTheBooker = "";
-            string Roomname = "";
+            
             int Timeslot = 0;
 
-            foreach (var rooms in Rooms.GetLokaler())
+            foreach (var room in Rooms.GetLokaler())
             {
-                Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
+                Console.WriteLine($"Lokale: {room.Name}. Antal siddepladser: {room.SeatsAmount}. Har rummet en projektor? {room.HasProjector}. Har rummet et Whiteboard? {room.HasWhiteboard}");
             }
             Console.WriteLine("");
             Console.WriteLine("Indtast navnet på facilitatoren af mødet ");
@@ -138,7 +137,7 @@ namespace _123123
                 
 			}
 
-			string bookingText = $"Lokale {Roomname} er booket {timeSlot}, {valgtDag}";
+			string bookingText = $"Lokale {_roomname} er booket {timeSlot}, {valgtDag}";
 
 			// Bekræft booking
 
