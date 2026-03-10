@@ -37,15 +37,9 @@ namespace _123123
             string Timeslot = Console.ReadLine().ToLower().Trim();
 
 
-            foreach (var rooms in Rooms.GetLokaler()
-     )
+            foreach (var rooms in Rooms.GetLokaler())
             { 
                 Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
-
-                string RoomName = rooms.Name;
-
-
-       
             }
 
             Console.WriteLine("Vælg det lokale du gerne vil rersaver ");
