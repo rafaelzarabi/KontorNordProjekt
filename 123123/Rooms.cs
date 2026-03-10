@@ -55,28 +55,29 @@ namespace _123123
 					bool lokaleA = false;
 					bool lokaleB = false;
 					bool lokaleC = false;
-					
+
 					foreach (string booking in Booking.bookings)
 					{
-						if (booking == "Lokale A er booket i " + tider[tid])
-						{
+						// Checker dag og tid ;
+						if (booking.Contains("Lokale A er booket " + tider[tid]) &&
+							booking.Contains(dage[dag]))
 							lokaleA = true;
-						}
 
-						if (booking == "Lokale B er booket i " + tider[tid])
-						{
+
+						if (booking.Contains("Lokale B er booket " + tider[tid]) &&
+							booking.Contains(dage[dag]))
 							lokaleB = true;
-						}
 
-						if (booking == "Lokale C er booket i " + tider[tid])
-						{
+
+						if (booking.Contains("Lokale C er booket " + tider[tid]) &&
+							booking.Contains(dage[dag]))
 							lokaleC = true;
-						}
 					}
-					
-            string statusA;
+
+
+					string statusA;
 					if (lokaleA == true)
-						statusA = "Reserveret af: ";
+						statusA = ($"Reserveret af:" );
 					else
 						statusA = "Ledig";
 
