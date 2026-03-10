@@ -7,6 +7,9 @@ namespace _123123
 {
     internal class UserService
     {
+
+        public User? CurrentUser { get; private set; }
+
         //listen her viser alle Users
         private List<User> _usersList = new List<User>();
 
@@ -109,6 +112,7 @@ namespace _123123
                 {
                     Console.WriteLine("Adgang givet");
                     Thread.Sleep(1000);
+                    CurrentUser = user;
                     return true;
                 }
             }

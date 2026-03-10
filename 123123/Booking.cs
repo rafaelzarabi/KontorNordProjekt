@@ -12,73 +12,37 @@ namespace _123123
 
         public string TimeSlot { get; private set; }       // "Morgen", "Formiddag", "Middag"
 
-        public string BookedBy { get; private set; }        // Den bruger, der har booket, null hvis ledig
+        public User? BookedBy { get; internal set; }        // Den bruger, der har booket, null hvis ledig
 
-
-
-
-        public static List<Booking> BoookingSlots = new List<Booking>() // static så alle programmer kan se den og ikke behøves og kalde den
+        private List<Booking> _allBookings = new List<Booking>();
+        public Booking(string day, string timeslot, User bookedBy)
         {
-            new Booking { Day = "Mandag", TimeSlot = "Morgen", BookedBy = ""},
-            new Booking { Day = "Mandag", TimeSlot = "Formiddag", BookedBy = ""},
-            new Booking { Day = "Mandag", TimeSlot = "Middag", BookedBy = ""},
-            new Booking { Day = "Tirsdag", TimeSlot = "Morgen", BookedBy = ""},
-            new Booking { Day = "Tirsdag", TimeSlot = "Formiddag", BookedBy = ""},
-            new Booking { Day = "Tirsdag", TimeSlot = "Middag", BookedBy = ""},
-            new Booking { Day = "Onsdag", TimeSlot = "Morgen", BookedBy = ""},
-            new Booking { Day = "Onsdag", TimeSlot = "Formiddag", BookedBy = ""},
-            new Booking { Day = "Onsdag", TimeSlot = "Middag", BookedBy = ""},
-            new Booking { Day = "Torsdag", TimeSlot = "Morgen", BookedBy = ""},
-            new Booking { Day = "Torsdag", TimeSlot = "Formiddag", BookedBy = ""},
-            new Booking { Day = "Torsdag", TimeSlot = "Middag", BookedBy = ""},
-            new Booking { Day = "Fredag", TimeSlot = "Morgen", BookedBy = ""},
-            new Booking { Day = "Fredag", TimeSlot = "Formiddag", BookedBy = ""},
-            new Booking { Day = "Fredag", TimeSlot = "Middag", BookedBy = ""}
-
-        };
-
-
-        public static void bookRoom()
-        {
-
-            int BookingNummer = 1;
-            foreach (Booking slot in BoookingSlots)
-            {
-                string status;
-                if (slot.BookedBy == "")
-                {
-                    status = "LEDIG";
-                }
-                else
-                {
-                    status = "OPTAGET af " + slot.BookedBy;
-                }
-
-                Console.WriteLine($"{slot.Day} {slot.TimeSlot} {slot.BookedBy} {status}");
-                BookingNummer++;
-            }
-
-            Console.WriteLine("Indtast navnet på facilitatoren af mødet");
-            string Facilitator = Console.ReadLine();
-
-            Console.WriteLine("Hvilket Tidspunkt ønsker du af booke? Morgen, formiddag, eftermiddag");
-            string ØnsketDag = Console.ReadLine();
-
-            Console.WriteLine("Hvilket Tidspunkt ønsker du af booke? Morgen, formiddag, eftermiddag");
-            string ØnsketTidspunkt = Console.ReadLine();
-
-            foreach (Booking booking in BoookingSlots)
-            {
-                if (booking.Day.ToString() == ØnsketDag && booking.TimeSlot == ØnsketTidspunkt)
-                {
-                    booking.BookedBy = Facilitator;
-                }
-            }
-
-
-
-
-
+            Day = day ; 
+            TimeSlot = timeslot;
+            BookedBy = bookedBy;
         }
+
+
+      
+        Booking booking1 = new Booking("mandag", "morgen", null);
+        Booking booking2 = new Booking("mandag", "Formiddag", null);
+        Booking booking3 = new Booking("mandag", "Eftermiddag", null);
+        Booking booking4 = new Booking("tirsdag", "morgen", null);
+        Booking booking5 = new Booking("tirsdag", "formiddag", null);
+        Booking booking6 = new Booking("tirsdag", "eftermiddag", null);
+        Booking booking7 = new Booking("onsdag", "morgen", null);
+        Booking booking8 = new Booking("onsdag", "Formiddag", null);
+        Booking booking9 = new Booking("onsdag", "Eftermiddag", null);
+        Booking booking10 = new Booking("torsdag", "morgen", null);
+        Booking booking11 = new Booking("torsdag", "Formiddag", null);
+        Booking booking12 = new Booking("torsdag", "Eftermiddag", null);
+        Booking booking13 = new Booking("fredag", "morgen", null);
+        Booking booking14 = new Booking("fredag", "Formiddag", null);
+        Booking booking15 = new Booking("fredag", "Eftermiddag", null);
+
+        
+        Booking
+
     }
+    
 } 
