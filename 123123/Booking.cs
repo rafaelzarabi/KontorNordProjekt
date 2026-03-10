@@ -12,9 +12,9 @@ namespace _123123
         public int _TimeSlot { get; private set; }
 
 
-        public static List<string> bookings = new List<string>();
-        List<Rooms> alleLokaler = Rooms.GetLokaler();
-        List<Booking> bookingss = new Booking()
+        public static List<Booking> bookings = new List<Booking>();
+        List<Rooms> rooms = Rooms.GetLokaler();
+     
        
         
         // constructor - til når vi skal oprette et booking objekt, som indeholder et NAME og TIMESLOT
@@ -37,7 +37,8 @@ namespace _123123
             string Timeslot = Console.ReadLine().ToLower().Trim();
 
 
-            foreach (var rooms in alleLokaler)
+            foreach (var rooms in Rooms.GetLokaler()
+     )
             { 
                 Console.WriteLine($"Lokale: {rooms.Name}. Antal siddepladser: {rooms.SeatsAmount}. Har rummet en projektor? {rooms.HasProjector}. Har rummet et Whiteboard? {rooms.HasWhiteboard}");
 
@@ -54,7 +55,7 @@ namespace _123123
 
             //opretter en ny bruger og tilføjer den til _userslisten
             Booking NewBooking = new Booking(NameOfTheBooker, TimeOfDay, Timeslot);
-            bookings.Add(NNewBooking);
+            bookings.Add(NewBooking);
 
 
 
@@ -65,7 +66,7 @@ namespace _123123
 
         public void BookRoom()
         {
-            List<Rooms> rooms = Rooms.GetLokaler();
+            
 
             Console.WriteLine("Vælg et lokale:");
 
