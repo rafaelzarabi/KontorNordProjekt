@@ -74,19 +74,19 @@ namespace _123123
 
 					string statusA;
 					if (lokaleA == true)
-						statusA = "Reserveret";
+						statusA = "Reserveret af: ";
 					else
 						statusA = "Ledig";
 
 					string statusB;
 					if (lokaleB == true)
-						statusB = "Reserveret";
+						statusB = "Reserveret af:";
 					else
 						statusB = "Ledig";
 
 					string statusC;
 					if (lokaleC == true)
-						statusC = "Reserveret";
+						statusC = "Reserveret af:";
 					else
 						statusC = "Ledig";
 
