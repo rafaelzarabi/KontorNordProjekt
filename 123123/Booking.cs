@@ -64,20 +64,25 @@ namespace _123123
 
             }
 
-            Console.WriteLine(name);
-                
+
+            Console.WriteLine("Vælg det lokale du gerne vil rersaver ");
+            Console.WriteLine("1) lokale A ");
+            Console.WriteLine("2) lokale b ");
+            Console.WriteLine("3) lokale c ");
+            Timeslot = Convert.ToInt32(Console.ReadLine());
+
             switch (Timeslot)
             {
                 case 1:
-                    Roomname = 
+                    Timeslot= 
 
                     break;
                 case 2:
-
+                    Timeslot=
 
                     break;
                 case 3:
-
+                    Timeslot=
 
                     break;
 
