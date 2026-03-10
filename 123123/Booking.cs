@@ -82,27 +82,32 @@ namespace _123123
 			Console.WriteLine("5) Fredag");
 
 			string dagInput = Console.ReadLine();
-			string valgtDag = "";
 
-			switch (dagInput)
-			{
-				case "1":
-					valgtDag = "Mandag";
-					break;
-				case "2":
-					valgtDag = "Tirsdag";
-					break;
-				case "3":
-					valgtDag = "Onsdag";
-					break;
-				case "4":
-					valgtDag = "Torsdag";
-					break;
-				case "5":
-					valgtDag = "Fredag";
-					break;
+            Day valgtDag;
 
-				default:
+            switch (dagInput)
+            {
+                case "1":
+                    valgtDag = Day.Mandag;
+                    break;
+
+                case "2":
+                    valgtDag = Day.Tirsdag;
+                    break;
+
+                case "3":
+                    valgtDag = Day.Onsdag;
+                    break;
+
+                case "4":
+                    valgtDag = Day.Torsdag;
+                    break;
+
+                case "5":
+                    valgtDag = Day.Fredag;
+                    break;
+
+                default:
 					Console.WriteLine("Ugyldigt valg");
 					Console.ReadKey();
 					return;
@@ -116,24 +121,29 @@ namespace _123123
 			Console.WriteLine("3) Eftermiddage 12:00 - 14:00");
 
 			string timeInput = Console.ReadLine();
-			string timeSlot = "";
 
-			switch (timeInput)
-			{
-				case "1":
-					timeSlot = "Morgen";
-					break;
-				case "2":
-					timeSlot = "Formiddag";
-					break;
-				case "3":
-					timeSlot = "Eftermiddag";
-					break;
+            TimeSlot timeSlot;
 
-				default:
-					Console.WriteLine("Ugyldigt valg");
-					Console.ReadKey();
-					return;
+            switch (timeInput)
+            {
+                case "1":
+                    timeSlot = TimeSlot.Morgen;
+                    break;
+
+                case "2":
+                    timeSlot = TimeSlot.Formiddag;
+                    break;
+
+                case "3":
+                    timeSlot = TimeSlot.Eftermiddag;
+                    break;
+
+                default:
+                    Console.WriteLine("Ugyldigt valg");
+                    Console.ReadKey();
+                    return;
+
+                
 			}
 
 			string bookingText = $"Lokale {Roomname} er booket {timeSlot}, {valgtDag}";
