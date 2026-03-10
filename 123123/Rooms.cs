@@ -57,21 +57,21 @@ namespace _123123
 					bool lokaleB = false;
 					bool lokaleC = false;
 
-					foreach (string booking in Booking.bookings)
+					foreach (string bookingx in Booking.bookings)
 					{
 						// Checker dag og tid ;
-						if (booking.Contains("Lokale A er booket " + tider[tid]) &&
-							booking.Contains(dage[dag]))
+						if (bookingx.Contains("Lokale A er booket " + tider[tid]) &&
+							bookingx.Contains(dage[dag]))
 							lokaleA = true;
 
 
-						if (booking.Contains("Lokale B er booket " + tider[tid]) &&
-							booking.Contains(dage[dag]))
+						if (bookingx.Contains("Lokale B er booket " + tider[tid]) &&
+							bookingx.Contains(dage[dag]))
 							lokaleB = true;
 
 
-						if (booking.Contains("Lokale C er booket " + tider[tid]) &&
-							booking.Contains(dage[dag]))
+						if (bookingx.Contains("Lokale C er booket " + tider[tid]) &&
+							bookingx.Contains(dage[dag]))
 							lokaleC = true;
 					}
 
