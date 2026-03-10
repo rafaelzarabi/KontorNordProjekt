@@ -29,6 +29,7 @@ namespace _123123
             return rooms; 
         }
 
+
 		public static void LokaleStatus()
 		{
 
@@ -56,7 +57,8 @@ namespace _123123
 
 					foreach (string booking in Booking.bookings) //looper over om de forskellige dage i tidsrum er bookede. Hvis det er booked, bliver bools nu true
 					{
-						if (booking == "Lokale A er booket i " + tider[tid] + " på " + dage[dag])
+
+						if (booking == "lokale A er booket i " + tider[tid] + " på " + dage[dag])
 						{
 							lokaleA = true;
 						}
@@ -70,21 +72,25 @@ namespace _123123
 						{
 							lokaleC = true;
 						}
+
 					}
 
 					string statusA; //hvis booket, eller hvis ikke booket, skal det skrive det ud 
+
 					if (lokaleA == true)
 						statusA = "Reserveret af: ";
 					else
 						statusA = "Ledig";
 
 					string statusB;
+
 					if (lokaleB == true)
 						statusB = "Reserveret af:";
 					else
 						statusB = "Ledig";
 
 					string statusC;
+
 					if (lokaleC == true)
 						statusC = "Reserveret af:";
 					else

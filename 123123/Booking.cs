@@ -11,11 +11,16 @@ namespace _123123
 		{
 			Console.Clear();
 
-			// Vælg lokale
+            //string så vi kan sætte hvem der har 
+            Console.WriteLine("Hvad er navnet på mødeansvarlige");
+			string meeting = Console.ReadLine();
+
+			//Vælg lokale
 			Console.WriteLine("Vælg lokale:");
 			Console.WriteLine("1) Lokale A");
 			Console.WriteLine("2) Lokale B");
 			Console.WriteLine("3) Lokale C");
+
 
 			string roomInput = Console.ReadLine();
 			string valgtLokale = "";
@@ -122,17 +127,20 @@ namespace _123123
 
 			if (confirm == "1")
 			{
+
 				if (bookings.Contains(bookingText))
 				{
 					Console.Clear();
 					Console.WriteLine("Dette lokale er allerede booket på det tidspunkt.");
 				}
+
 				else
 				{
 					bookings.Add(bookingText);
 
 					Console.Clear();
 					Console.WriteLine("Booking gennemført!");
+
 					Console.WriteLine(bookingText);
 				}
 			}
