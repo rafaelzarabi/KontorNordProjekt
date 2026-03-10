@@ -116,9 +116,9 @@ namespace _123123
 			Console.WriteLine("3) Eftermiddage 12:00 - 14:00");
 
 			string timeInput = Console.ReadLine();
-            
+            TimeSlot timeSlot;
 
-			switch (timeInput)
+            switch (timeInput)
 			{
 				case "1":
                     timeSlot = TimeSlot.Morgen;
