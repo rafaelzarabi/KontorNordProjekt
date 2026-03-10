@@ -47,17 +47,17 @@ namespace _123123
 
 				for (int tid = 0; tid < tider.Length; tid++)
 				{
-					TimeSlot currentSlot = (TimeSlot)tid;
+					TimeSlot currentSlot = (TimeSlot)tid; //konverterer int til vores enum så vi kan tage bookings ordentligt
 
-					// Default all rooms to "Ledig"
+				
 					string statusA = "Ledig";
 					string statusB = "Ledig";
 					string statusC = "Ledig";
 
-					// Look for bookings at this day/time
+					//Looper gennem hver booking der er lavet 
 					foreach (var booking in Booking.bookings)
 					{
-						if (booking.Day == (Day)dag && booking._TimeSlot == currentSlot)
+						if (booking.Day == (Day)dag && booking._TimeSlot == currentSlot) //sikrer at markeringen på rigtige tidspunkt og dag
 						{
 							switch (booking._roomname)
 							{
