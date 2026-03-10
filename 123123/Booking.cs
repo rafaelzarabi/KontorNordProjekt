@@ -157,7 +157,7 @@ namespace _123123
 			string confirm = Console.ReadLine();
 
 
-			bool alreadyBooked = bookings.Exists(b => b._roomname == _roomname && b.Day == Day && b._TimeSlot == _TimeSlot); //.Exists returnerer sandt hvis mindst én ting matcher mindst en af listen af conditions
+			bool alreadyBooked = bookings.Exists(b => b._roomname == _roomname && b.Day == Day && b._TimeSlot == _TimeSlot); //.Exists returnerer sandt hvis mindst én ting matcher mindst en af listen af conditions (b er hver booking)
 
 
 			if (alreadyBooked)
