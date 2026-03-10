@@ -37,20 +37,23 @@ namespace _123123
                 string RoomName = rooms.Name;
 
 
-        }
+       
+            }
 
             Console.WriteLine("Vælg det lokale du gerne vil rersaver ");
             Console.WriteLine("1) lokale A ");
             Console.WriteLine("1) lokale b ");
             Console.WriteLine("1) lokale c ");
-           
-           
-        
-        
-        
-        
-        
-        
+
+            //opretter en ny bruger og tilføjer den til _userslisten
+            User NewUser = new User(Firstname, Lastname, Password, UserID);
+            _usersList.Add(NewUser);
+
+
+
+
+
+
         }
 
         public void BookRoom()
