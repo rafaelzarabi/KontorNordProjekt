@@ -71,13 +71,11 @@ namespace _123123
 
                 case '2':
                     Console.Clear();
-                    // lav en nyt objekt der kalder på klassen oppe i toppen uden for denne metoden(ligsom i linje 10/11), og kald metoden fra klassen her(ligsom i linje 81 uden return): NEEGA
-                    Console.WriteLine("test");
+                    Rooms.GetLokaler();
                     break;
 
                 case '3':
                     Console.Clear();
-                    // lav en nyt objekt der kalder på klassen oppe i toppen uden for metoden(ligsom i linje 10/11), og kald metoden fra klassen her(ligsom i linje 81 uden return): RAFAEL
                     booking.BookRoom();
                     break;
                 case '4':
