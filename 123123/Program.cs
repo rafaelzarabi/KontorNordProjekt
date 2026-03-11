@@ -12,9 +12,9 @@ namespace _123123
             
             UserService userService = new UserService();
 
-            Rooms lokale1 = new Rooms("A", 70, true, true);
-            Rooms lokale2 = new Rooms("B", 40, true, false);
-            Rooms lokale3 = new Rooms("C", 20, false, true);
+            Rooms lokale1 = new Rooms("Lokale A", 70, true, true);
+            Rooms lokale2 = new Rooms("Lokale B", 40, true, false);
+            Rooms lokale3 = new Rooms("Lokale C", 20, false, true);
 
             List<Booking> allBookings = new List<Booking>();
             string[] days = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };
@@ -91,7 +91,7 @@ namespace _123123
                         {
                             if (b.BookedBy == null)
                             {
-                                Console.WriteLine($"{b.Day} {b.TimeSlot}{b.Room.Name} - LEDIG");
+                                Console.WriteLine($"{b.Day} {b.TimeSlot} {b.Room.Name} - LEDIG");
                             }
                             else
                             {
