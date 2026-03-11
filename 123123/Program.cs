@@ -15,9 +15,8 @@ namespace _123123
             Rooms lokale1 = new Rooms("Lokale A", 70, true, true);
             Rooms lokale2 = new Rooms("Lokale B", 40, true, false);
             Rooms lokale3 = new Rooms("Lokale C", 20, false, true);
-
-            User user = new User("Admin", "admin", "admin", 69);
-
+          
+          
             List<Booking> allBookings = new List<Booking>();
             string[] days = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };
             string[] times = { "Morgen", "Formiddag", "Eftermiddag" };
@@ -91,20 +90,7 @@ namespace _123123
                 {
                     case '1':
                         Console.Clear();
-                        foreach (Booking b in allBookings)
-                        {
-                            if (b.BookedBy == null)
-                            {
-                                Console.WriteLine($"{b.Day} {b.TimeSlot} {b.Room.Name} - LEDIG");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{b.Day} {b.TimeSlot} - OPTAGET af {b.BookedBy._Firstname}");
-                            }
-                        }
-
-                        Console.ReadKey();
-                        
+                        Rooms.LokaleStatus(allBookings);
                         break;
 
                     case '2':
@@ -112,7 +98,6 @@ namespace _123123
 
                         break;
 
-                    case '3':
                         Console.Clear();
                         foreach (Booking b in allBookings)
                         {
