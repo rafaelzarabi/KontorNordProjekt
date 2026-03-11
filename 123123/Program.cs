@@ -91,7 +91,7 @@ namespace _123123
                         {
                             if (b.BookedBy == null)
                             {
-                                Console.WriteLine($"{b.Day} {b.TimeSlot} - LEDIG");
+                                Console.WriteLine($"{b.Day} {b.TimeSlot}{b.Room.Name} - LEDIG");
                             }
                             else
                             {
