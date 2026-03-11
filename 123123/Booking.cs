@@ -10,7 +10,6 @@ namespace _123123
 
         public string Day { get; set; }
         public string TimeSlot { get; set; }
-
         public User BookedBy { get; set; }
         public Rooms Room { get; set; }
 
