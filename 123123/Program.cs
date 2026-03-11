@@ -8,10 +8,43 @@ namespace _123123
     {
         static void Main(string[] args)
         {
-            // kalder klassen, så jeg kan bruge den i main
+            
             Menu menu = new Menu();
             UserService userService = new UserService();
-            
+
+            Rooms lokale1 = new Rooms("A", 70, true, true);
+            Rooms lokale2 = new Rooms("B", 40, true, false);
+            Rooms lokale3 = new Rooms("C", 20, false, true);
+
+            Booking booking1 = new Booking("mandag", "morgen", null, null);
+            Booking booking2 = new Booking("mandag", "Formiddag", null, null);
+            Booking booking3 = new Booking("mandag", "Eftermiddag", null, null);
+            Booking booking4 = new Booking("tirsdag", "morgen", null, null);
+            Booking booking5 = new Booking("tirsdag", "formiddag", null, null);
+            Booking booking6 = new Booking("tirsdag", "eftermiddag", null, null);
+            Booking booking7 = new Booking("onsdag", "morgen", null, null);
+            Booking booking8 = new Booking("onsdag", "Formiddag", null, null);
+            Booking booking9 = new Booking("onsdag", "Eftermiddag", null, null);
+            Booking booking10 = new Booking("torsdag", "morgen", null, null);
+            Booking booking11 = new Booking("torsdag", "Formiddag", null, null);
+            Booking booking12 = new Booking("torsdag", "Eftermiddag", null, null);
+            Booking booking13 = new Booking("fredag", "morgen", null, null);
+            Booking booking14 = new Booking("fredag", "Formiddag", null, null);
+            Booking booking15 = new Booking("fredag", "Eftermiddag", null, null);
+
+            User user = userService.CurrentUser;
+
+            Booking booking = new Booking(
+                "Mandag",
+                "Morgen",
+                user,
+                lokale1
+            );
+
+            lokale1.TilføjBooking(booking);
+
+
+
 
             bool ProgramRunning = true;
             bool LogIn = false;
@@ -20,17 +53,104 @@ namespace _123123
             {
                 while (LogIn == false)
                 {
-                    Booking.bookRoom();
-                    Console.ReadLine();
-                    Console.Clear();
-                    LogIn = menu.LogInMenuBool();   // Vi har en return stafet med bool fr+a loginBool()-->loginMenuBool-->Main
+
+                    Console.WriteLine("================================================");
+                    Console.WriteLine("                     Log In                     ");
+                    Console.WriteLine("================================================");
+                    Console.WriteLine("1)  Log ind ");
+                    Console.WriteLine("2)  Register bruger");
+                    Console.WriteLine("3)  Se alle registeret brugere");
+                    Console.WriteLine("4)  Afslut programmet");
+
+                    ConsoleKeyInfo keyinfo = Console.ReadKey();
+
+                    switch (keyinfo.KeyChar)
+                    {
+                        case '1':
+                            Console.Clear();
+                            return userService.LoginBool();
+                        case '2':
+                            Console.Clear();
+                            userService.RegisterUser();
+                            break;
+                        case '3':
+                            Console.Clear();
+                            userService.ShowUserList();
+                            break;
+                        case '4':
+                            Console.Clear();
+                            CloseProgram();
+                            break;
+                    }
+                    return false;
                 }
 
                 Console.Clear();
-                LogIn = menu.MainMenuBool();      // Vi har en return stafet med bool fra  LogOut()-->mainMenu()-->Main()    
+                Console.Clear();
+                Console.WriteLine("===============================================");
+                Console.WriteLine("                   HOVEDMENU                   ");
+                Console.WriteLine("===============================================");
+
+                Console.WriteLine("1)  Status på lokaler");
+                Console.WriteLine("2)  Lokale information");
+                Console.WriteLine("3)  Book et lokale");
+                Console.WriteLine("4)  Log ud");
+
+                ConsoleKeyInfo keyinfo = Console.ReadKey();
+
+                switch (keyinfo.KeyChar)
+                {
+                    case '1':
+                        Console.Clear();
+
+                        break;
+
+                    case '2':
+                        Console.Clear();
+
+                        break;
+
+                    case '3':
+                        Console.Clear();
+
+                        break;
+                    case '4':
+                        Console.Clear();
+                        return userService.LogOutBool();
+
+                }
+                return true;      // Vi har en return stafet med bool fra  LogOut()-->mainMenu()-->Main()    
             }
         }
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void CloseProgram()
         {
             Console.WriteLine("Er du sikker på du vil afslutte programmet?\n At afslutte programmet fjerne af indtastet data");
@@ -47,13 +167,15 @@ namespace _123123
                 break;
             } 
             
-            //LOKALE INFO - FRA LOKALER.CS KLASSE
-            List<Rooms> rooms = Rooms.GetLokaler();
+
+
+            /*//LOKALE INFO - FRA LOKALER.CS KLASSE
+            List<Rooms> rooms = ne 
 
             foreach (var room in rooms)
             {
                 Console.WriteLine($"Lokale {room.Name} ({room.SeatsAmount} pladser) - {(room.HasWhiteboard ? "Whiteboard" : "Ingen whiteboard")} - {(room.HasProjector ? "Projektor" : "Ingen projektor")}");
-            }
+            }*/
         }
     }
 }
