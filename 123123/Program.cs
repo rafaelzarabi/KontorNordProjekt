@@ -25,6 +25,8 @@ namespace _123123
                 foreach (string time in times)
                 {
                     allBookings.Add(new Booking(day, time, null, lokale1));
+                    allBookings.Add(new Booking(day, time, null, lokale2));
+                    allBookings.Add(new Booking(day, time, null, lokale3));
                 }
             }
 
@@ -116,15 +118,52 @@ namespace _123123
                         Console.WriteLine("Indtast tidspunkt:");
                         string time = Console.ReadLine();
 
+                        Console.WriteLine("Vælg ønskede lokale:");
+                        Console.WriteLine("1) Lokale A");
+                        Console.WriteLine("2) Lokale B");
+                        Console.WriteLine("3) Lokale C");
+
+                        char lokaleValg;
+
+                         while (true)
+                        {
+                            lokaleValg = Console.ReadKey(true).KeyChar;
+
+                            if (lokaleValg == '1' || lokaleValg == '2' || lokaleValg == '3')
+                            {
+                                break;
+                            }
+
+                            Console.WriteLine("Ugyldigt valg, vælg venligst 1 2 eller 3");
+                        }
+                        Rooms valgtLokale = null;
+                        switch (lokaleValg)
+                        {
+                            case '1':
+                                valgtLokale = lokale1;
+                                break;
+                            case '2':
+                                valgtLokale = lokale2;
+                                break;
+
+                            case '3':
+                                valgtLokale = lokale3;
+                                break;
+                        }
+
+
+
                         foreach (Booking b in allBookings)
                         {
                             if (b.Day.ToLower() == day.ToLower() &&
-                                b.TimeSlot.ToLower() == time.ToLower())
+                                b.TimeSlot.ToLower() == time.ToLower() &&
+                                b.Room == valgtLokale)
+        
                             {
                                 if (b.BookedBy == null)
                                 {
                                     b.BookedBy = userService.CurrentUser;
-                                    Console.WriteLine("Lokalet er nu booket");
+                                    Console.WriteLine($"{valgtLokale.Name} er nu booket");
                                 }
                                 else
                                 {
