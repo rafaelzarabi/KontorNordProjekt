@@ -135,7 +135,7 @@ namespace _123123
                         Console.ReadKey();
                         break;
                     case '4':
-                        FjernEnBooking();
+                        FjernEnBooking(allBookings);
                         break;
                     case '5':
                         Console.Clear();
@@ -153,7 +153,7 @@ namespace _123123
 
 
 
-        public static void FjernEnBooking()
+        public static void FjernEnBooking(List<Booking> allBookings)
         {
 
             Console.WriteLine("Hvilken dag vil du fjerne booking fra?");
