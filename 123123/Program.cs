@@ -11,12 +11,14 @@ namespace _123123
             
             
             UserService userService = new UserService();
-
+            List<Rooms> rooooms = new List<Rooms>();
             Rooms lokale1 = new Rooms("Lokale A", 70, true, true);
             Rooms lokale2 = new Rooms("Lokale B", 40, true, false);
             Rooms lokale3 = new Rooms("Lokale C", 20, false, true);
-          
-          
+            rooooms.Add(lokale1);
+            rooooms.Add(lokale2);
+            rooooms.Add(lokale3);
+
             List<Booking> allBookings = new List<Booking>();
             string[] days = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };
             string[] times = { "Morgen", "Formiddag", "Eftermiddag" };
@@ -95,7 +97,12 @@ namespace _123123
 
                     case '2':
                         Console.Clear();
+                        foreach (var room in rooooms)
+                        {
+                            Console.WriteLine($" Navn: {room.Name}. Siddepladser: {room.SeatsAmount}. Projektor? {room.HasProjector} Whiteboard?{room.HasWhiteboard}"); 
+                        }
 
+                        Console.ReadKey();
                         break;
                     case '3':
                         Console.Clear();
