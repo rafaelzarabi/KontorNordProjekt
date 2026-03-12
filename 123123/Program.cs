@@ -97,7 +97,7 @@ namespace _123123
                         Console.Clear();
 
                         break;
-
+                    case '3':
                         Console.Clear();
                         foreach (Booking b in allBookings)
                         {
